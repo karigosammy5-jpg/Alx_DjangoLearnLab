@@ -114,9 +114,11 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
+# https://docs.djangoproject.com/en/6.0/howto/static
 STATIC_URL = 'static/'
-LOGIN_REDIRECT_URL = 'list_books'
-LOGOUT_REDIRECT_URL = 'login'
-AUTH_USER_MODEL = 'relationship_app.CustomUser'
+# Default primary key field type
+# https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field  
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Custom User Model
+# Change this line:
+AUTH_USER_MODEL = 'bookshelf.CustomUser'
