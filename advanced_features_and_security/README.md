@@ -1,12 +1,12 @@
-Permissions and Groups Documentation
------------------------------------
-Custom Permissions:
-- can_view: Allows viewing book list.
-- can_create: Allows adding new books.
-- can_edit: Allows editing book details.
-- can_delete: Allows removing books.
+# Advanced Features and Security
 
-Groups and Assigned Permissions:
-- Viewers: can_view
-- Editors: can_view, can_create, can_edit
-- Admins: All permissions (can_view, can_create, can_edit, can_delete)
+## Custom Permissions
+- can_view: Allows a user to view the list of books.
+- can_create: Allows a user to add a new book.
+- can_edit: Allows a user to edit book details.
+- can_delete: Allows a user to delete a book.
+
+## Groups and Roles
+- **Viewers**: Can only view books.
+- **Editors**: Can view, add, and edit books.
+- **Admins**: Have full permissions including delete.
