@@ -1,12 +1,13 @@
 # Advanced Features and Security
 
 ## Custom Permissions
-- can_view: Allows a user to view the list of books.
-- can_create: Allows a user to add a new book.
-- can_edit: Allows a user to edit book details.
-- can_delete: Allows a user to delete a book.
+This project implements custom permissions for the Book model:
+- **can_view**: Allows users to view books.
+- **can_create**: Allows users to create books.
+- **can_edit**: Allows users to edit books.
+- **can_delete**: Allows users to delete books.
 
 ## Groups and Roles
-- **Viewers**: Can only view books.
-- **Editors**: Can view, add, and edit books.
-- **Admins**: Have full permissions including delete.
+- **Admins**: Full access to all permissions.
+- **Editors**: can_create and can_edit permissions.
+- **Viewers**: can_view permission.
