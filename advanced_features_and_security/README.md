@@ -1,13 +1,7 @@
-# Advanced Features and Security
-
-## Custom Permissions
-Implemented in models.py for the Book model:
-- can_view
-- can_create
-- can_edit
-- can_delete
-
-## Groups
-- **Viewers**: can_view
-- **Editors**: can_view, can_create, can_edit
-- **Admins**: All permissions
+# Security Implementation
+- DEBUG set to False
+- Configured SECURE_BROWSER_XSS_FILTER, X_FRAME_OPTIONS, and SECURE_CONTENT_TYPE_NOSNIFF
+- Set CSRF_COOKIE_SECURE and SESSION_COOKIE_SECURE to True
+- Implemented CSP using django-csp
+- Used Django ORM to prevent SQL Injection
+- Added CSRF tokens to templates
