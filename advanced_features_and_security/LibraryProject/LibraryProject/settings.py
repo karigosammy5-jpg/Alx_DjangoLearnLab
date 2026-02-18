@@ -155,3 +155,19 @@ SECURE_HSTS_PRELOAD = True
 
 # 5. Secure Proxy Header (Required for many hosting providers)
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# --- SECURITY SETTINGS FOR PRODUCTION---
+# These settings ensure the app is only accessible via a secure HTTPS connection 
+#1. Redirect all HTTP  requests to HTTPS 
+# This kicks any insecure connection over to the secure version.
+SECURE_SSL_REDIRECT = True
+
+# 2. HTTP Strict Transport Security (HSTS)
+#This tells the browser: " For the next year (31536000 seconds), only connect to this site using HTTPS."
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS to all subdomains
+SECURE_HSTS_PRELOAD = True  # Allow site to be included in browser preload lists    
+SESSION_COOKIE_SECURE = True  # Ensure session cookies are only sent over HTTPS
+CSRF_COOKIE_SECURE = True  # Ensure CSRF cookies are only sent over HTTPS  
+X_FRAME_OPTIONS = 'DENY'  # Prevent clickjacking by disallowing framing of the site
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent MIME type sniffing      
+SECURE_BROWSER_XSS_FILTER = True  # Enable browser's XSS protection 

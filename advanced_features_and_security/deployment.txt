@@ -1,0 +1,9 @@
+# Deployment Configuration for HTTPS 
+1. SSL Certificate: Use Let's Encrypt(Certbot) to generate a free SSl certificate for the domain.
+2. Web Server (Nginx) Setup:
+- Configure Nginx to listen on port 443 (HTTPS).
+- Link the 'ssl_certificate' and 'ssl_certificate_key' to the paths of the generated certificates.
+3. Proxy Settings:
+- Ensure Nginx passes the X-Forwarded-Proto' header to Django.
+- This allows Django's SECURE_SSL_REDIRECT to know the request is already secure.
+4. Firewall: Ensure port 443 is open on the server's firewall(UFW/Security Groups).
