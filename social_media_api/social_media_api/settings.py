@@ -34,7 +34,12 @@ SECRET_KEY=env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = [env('ALLOWED_HOSTS'), 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'alx-djangolearnlab-be1j.onrender.com', 
+    'localhost', 
+    '127.0.0.1', 
+    '.onrender.com'
+]
 
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
