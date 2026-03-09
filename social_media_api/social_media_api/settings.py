@@ -46,7 +46,8 @@ X_FRAME_OPTIONS = 'DENY'
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_SSL_REDIRECT=True
 CSRF_TRUSTED_ORIGINS = ['https://alx-djangolearnlab-be1j.onrender.com', 'https://*.onrender.com']
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -110,8 +111,7 @@ WSGI_APPLICATION = 'social_media_api.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
-    )
+        conn_max_age=600, ssl_require=True)
 }
 
     
