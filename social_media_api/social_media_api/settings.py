@@ -32,7 +32,7 @@ SECRET_KEY=env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'alx-djangolearnlab-be1j.onrender.com', 
@@ -44,7 +44,8 @@ ALLOWED_HOSTS = [
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
 SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_SSL_REDIRECT = env.bool('SECURE_SSL_REDIRECT', default=True)
+SECURE_SSL_REDIRECT=True
+CSRF_TRUSTED_ORIGINS = ['https://alx-djangolearnlab-be1j.onrender.com', 'https://*.onrender.com']
 
 # Application definition
 
@@ -155,3 +156,4 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
